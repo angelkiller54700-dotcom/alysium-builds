@@ -46,8 +46,9 @@ const config: Config = {
         float: "float 6s ease-in-out infinite",
         "pulse-slow": "pulse 4s ease-in-out infinite",
         twinkle: "twinkle 3s ease-in-out infinite",
-        drift: "drift 46s ease-in-out infinite",
-        "drift-slow": "drift 68s ease-in-out infinite reverse",
+        drift: "drift 34s ease-in-out infinite",
+        "drift-slow": "drift 50s ease-in-out infinite reverse",
+        cruise: "cruise 90s linear infinite",
       },
       keyframes: {
         float: {
@@ -60,7 +61,12 @@ const config: Config = {
         },
         drift: {
           "0%, 100%": { transform: "translate(0, 0)" },
-          "50%": { transform: "translate(4%, 1.5%)" },
+          "50%": { transform: "translate(6%, 2%)" },
+        },
+        cruise: {
+          "0%": { transform: "translate(-30%, 0)" },
+          "45%": { transform: "translate(10%, -2.5%)" },
+          "100%": { transform: "translate(130%, 3%)" },
         },
       },
     },

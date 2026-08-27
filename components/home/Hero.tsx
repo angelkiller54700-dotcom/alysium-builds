@@ -38,6 +38,17 @@ const lanternLights = [
 ].map((l, i) => ({ ...l, duration: 2.6 + (i % 3) * 0.6, delay: i * 0.7 }));
 const allLights = [...castleLights, ...lanternLights];
 
+// Floating island cutouts (public/images/island-*.png), each with its own
+// float speed/delay so they don't all bob in sync. Tweak x/y/width to
+// reposition — they're placed inside the same layer as the hero image so
+// they zoom/pan together with it on scroll.
+const floatingIslands = [
+  { src: "/images/island-1.png", x: 29, y: -2, width: 16, duration: 7, delay: 0 },
+  { src: "/images/island-2.png", x: 1, y: 6, width: 13, duration: 8.5, delay: 1.2 },
+  { src: "/images/island-3.png", x: 69, y: -1, width: 11, duration: 6.5, delay: 0.6 },
+  { src: "/images/island-4.png", x: 90, y: 4, width: 12, duration: 7.5, delay: 2 },
+];
+
 /**
  * Signature scroll rig: the section is 220vh tall, the visual scene is
  * `sticky` inside it, and scroll progress across that range drives a light
@@ -79,6 +90,40 @@ export default function Hero() {
             className="object-cover"
             sizes="100vw"
           />
+
+          {/* Distant floating islands — gentle up/down float, each at its own pace */}
+          {floatingIslands.map((island) => (
+            <div
+              key={island.src}
+              className="animate-float absolute"
+              style={{
+                left: `${island.x}%`,
+                top: `${island.y}%`,
+                width: `${island.width}%`,
+                animationDuration: `${island.duration}s`,
+                animationDelay: `${island.delay}s`,
+              }}
+            >
+              <Image
+                src={island.src}
+                alt=""
+                width={1254}
+                height={1254}
+                className="h-auto w-full drop-shadow-[0_18px_30px_rgba(0,0,0,0.5)]"
+              />
+            </div>
+          ))}
+
+          {/* Zeppelin — slow cinematic cruise across the sky, loops off-screen */}
+          <div className="animate-cruise absolute left-0 top-[19%] w-[22%]">
+            <Image
+              src="/images/zeppelin.png"
+              alt="Airship cruising over Alysium Builds"
+              width={1254}
+              height={1254}
+              className="h-auto w-full drop-shadow-[0_14px_24px_rgba(0,0,0,0.5)]"
+            />
+          </div>
 
           {/* Drifting cloud haze — subtle atmospheric motion over the sky */}
           <div className="pointer-events-none absolute inset-0 overflow-hidden">
