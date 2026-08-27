@@ -1,0 +1,22 @@
+{
+  "slug": "ashenkeep-castle",
+  "name": "Ashenkeep Castle",
+  "type": "Faction",
+  "categories": ["Medieval", "Fantasy"],
+  "description": "A dark medieval stronghold built for factions, sieges, and wars.",
+  "longDescription": "Ashenkeep Castle is a siege-ready fortress built for faction and war servers. Layered walls, defensible chokepoints, and a fully furnished keep interior give raiders and defenders equally interesting fights, without sacrificing atmosphere.",
+  "version": "1.20.1",
+  "size": "180 x 180 blocks",
+  "interiors": true,
+  "customTerrain": true,
+  "toolsUsed": ["WorldEdit", "Axiom"],
+  "featured": true,
+  "seed": 2,
+  "gallery": [
+    { "label": "Exterior", "seed": 2 },
+    { "label": "Throne Room", "seed": 21 },
+    { "label": "Walls & Towers", "seed": 22 },
+    { "label": "Aerial View", "seed": 23 }
+  ],
+  "resourceLink": "https://builtbybit.com/resources/ashenkeep-castle.0"
+}

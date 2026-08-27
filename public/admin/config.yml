@@ -1,0 +1,157 @@
+# Decap CMS config — visual admin for Alysium Builds content.
+#
+# LOCAL EDITING (works right now, no setup needed):
+#   1) npm run dev          (in one terminal)
+#   2) npm run cms          (in another terminal — starts the local proxy)
+#   3) open http://localhost:3000/admin/
+# Changes are written straight to the JSON files in /content and to
+# public/images/uploads for images. Commit + push them like any other
+# code change once you're happy with them.
+#
+# REMOTE EDITING (edit from anywhere, once you're hosted):
+#   Once this repo lives on GitHub, set `repo:` below to "yourname/alysium-builds"
+#   and follow https://decapcms.org/docs/github-backend/ to register a GitHub
+#   OAuth App + auth provider. That's independent of where the site itself is
+#   hosted (your friend's server, Vercel, anywhere) — it only handles the
+#   admin login. Until then, local_backend below keeps everything working
+#   without any of that setup.
+
+backend:
+  name: github
+  repo: your-username/alysium-builds # TODO: update once this is pushed to GitHub
+  branch: main
+
+local_backend: true
+
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "projects"
+    label: "Portfolio Projects"
+    label_singular: "Project"
+    folder: "content/projects"
+    create: true
+    delete: true
+    identifier_field: name
+    slug: "{{fields.slug}}"
+    format: json
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - {
+          label: "Slug (URL id)",
+          name: "slug",
+          widget: "string",
+          hint: "Lowercase, hyphenated, e.g. celestial-hub. Used in the project's URL.",
+        }
+      - {
+          label: "Type badge",
+          name: "type",
+          widget: "string",
+          hint: "Short label shown on the card, e.g. Hub, Faction, Survival, Town, Spawn, Map",
+        }
+      - label: "Categories"
+        name: "categories"
+        widget: "select"
+        multiple: true
+        options: ["Hubs", "Spawns", "Survival", "Fantasy", "Medieval", "Modern", "Maps"]
+      - { label: "Short description", name: "description", widget: "text" }
+      - { label: "Long description", name: "longDescription", widget: "text" }
+      - { label: "Minecraft version", name: "version", widget: "string" }
+      - { label: "Size", name: "size", widget: "string", hint: "e.g. 300 x 300 blocks" }
+      - { label: "Interiors included", name: "interiors", widget: "boolean", default: true }
+      - { label: "Custom terrain", name: "customTerrain", widget: "boolean", default: true }
+      - label: "Tools used"
+        name: "toolsUsed"
+        widget: "list"
+        default: ["WorldEdit"]
+      - {
+          label: "Featured on homepage",
+          name: "featured",
+          widget: "boolean",
+          default: false,
+          hint: "Only featured projects show on the homepage (max ~4 recommended).",
+        }
+      - {
+          label: "Cover image",
+          name: "image",
+          widget: "image",
+          required: false,
+          hint: "Upload a real screenshot. Leave empty to keep the generated placeholder art.",
+        }
+      - {
+          label: "Placeholder art seed",
+          name: "seed",
+          widget: "number",
+          value_type: "int",
+          hint: "Any whole number — only used if no cover image is uploaded.",
+        }
+      - label: "Gallery"
+        name: "gallery"
+        widget: "list"
+        summary: "{{fields.label}}"
+        fields:
+          - { label: "Label", name: "label", widget: "string" }
+          - { label: "Image", name: "image", widget: "image", required: false }
+          - { label: "Placeholder art seed", name: "seed", widget: "number", value_type: "int" }
+      - {
+          label: "BuiltByBit link (optional)",
+          name: "resourceLink",
+          widget: "string",
+          required: false,
+          hint: "Fill in only if this build is also purchasable as a resource.",
+        }
+
+  - name: "resources"
+    label: "Shop Resources"
+    label_singular: "Resource"
+    folder: "content/resources"
+    create: true
+    delete: true
+    identifier_field: name
+    slug: "{{fields.slug}}"
+    format: json
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Slug (id)", name: "slug", widget: "string" }
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options: ["Spawns", "Schematics", "Building Packs", "Maps", "Terrain", "Decorations"]
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Price (USD)", name: "price", widget: "number", value_type: "float" }
+      - { label: "Minecraft version", name: "version", widget: "string" }
+      - { label: "File format", name: "format", widget: "string", hint: "e.g. .schem, World" }
+      - {
+          label: "Cover image",
+          name: "image",
+          widget: "image",
+          required: false,
+          hint: "Upload a real screenshot. Leave empty to keep the generated placeholder art.",
+        }
+      - { label: "Placeholder art seed", name: "seed", widget: "number", value_type: "int" }
+      - { label: "BuiltByBit link", name: "link", widget: "string" }
+      - { label: "Featured on homepage", name: "featured", widget: "boolean", default: false }
+
+  - name: "testimonials"
+    label: "Testimonials"
+    label_singular: "Testimonial"
+    folder: "content/testimonials"
+    create: true
+    delete: true
+    identifier_field: name
+    slug: "{{fields.name}}"
+    format: json
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Role", name: "role", widget: "string", hint: "e.g. Server Owner, Network Owner" }
+      - {
+          label: "Rating",
+          name: "rating",
+          widget: "number",
+          value_type: "int",
+          min: 1,
+          max: 5,
+          default: 5,
+        }
+      - { label: "Quote", name: "quote", widget: "text" }

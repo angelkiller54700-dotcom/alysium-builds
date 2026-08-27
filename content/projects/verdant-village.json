@@ -1,0 +1,21 @@
+{
+  "slug": "verdant-village",
+  "name": "Verdant Village",
+  "type": "Town",
+  "categories": ["Fantasy", "Medieval"],
+  "description": "A cozy medieval village with farms, markets, and custom interiors.",
+  "longDescription": "Verdant Village brings warmth and life to a medieval town build. Every house has a distinct interior, the market square is dressed for trade, and surrounding farmland ties the whole settlement into its landscape.",
+  "version": "1.19.4",
+  "size": "250 x 250 blocks",
+  "interiors": true,
+  "customTerrain": true,
+  "toolsUsed": ["WorldEdit", "BlockBench"],
+  "featured": true,
+  "seed": 4,
+  "gallery": [
+    { "label": "Overview", "seed": 4 },
+    { "label": "Market Square", "seed": 41 },
+    { "label": "Interiors", "seed": 42 },
+    { "label": "Aerial View", "seed": 43 }
+  ]
+}

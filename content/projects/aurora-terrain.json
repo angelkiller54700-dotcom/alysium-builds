@@ -1,0 +1,21 @@
+{
+  "slug": "aurora-terrain",
+  "name": "Aurora Terrain",
+  "type": "Map",
+  "categories": ["Maps", "Modern"],
+  "description": "A beautiful custom terrain map with mountains, rivers, and biomes.",
+  "longDescription": "Aurora Terrain is a large-scale custom map built for creative and terraforming servers. Sculpted mountain ranges, carved rivers, and smooth biome blending give builders a canvas that already feels finished before a single block is placed.",
+  "version": "1.20.4",
+  "size": "2000 x 2000 blocks",
+  "interiors": false,
+  "customTerrain": true,
+  "toolsUsed": ["WorldEdit", "Terra"],
+  "featured": false,
+  "seed": 6,
+  "gallery": [
+    { "label": "Overview", "seed": 6 },
+    { "label": "Mountains", "seed": 61 },
+    { "label": "Rivers", "seed": 62 },
+    { "label": "Aerial View", "seed": 63 }
+  ]
+}
