@@ -45,8 +45,9 @@ const allLights = [...castleLights, ...lanternLights];
 const floatingIslands = [
   { src: "/images/island-1.png", x: 29, y: -2, width: 16, duration: 7, delay: 0 },
   { src: "/images/island-2.png", x: 1, y: 6, width: 13, duration: 8.5, delay: 1.2 },
-  { src: "/images/island-3.png", x: 69, y: -1, width: 11, duration: 6.5, delay: 0.6 },
-  { src: "/images/island-4.png", x: 90, y: 4, width: 12, duration: 7.5, delay: 2 },
+  // Repositioned to sit near the "U" of "PREMIUM" in the headline, behind the text.
+  { src: "/images/island-3.png", x: 27, y: 29, width: 11, duration: 6.5, delay: 0.6 },
+  // island-4 (far top-right) removed per feedback — felt redundant/cut off at the edge.
 ];
 
 /**
@@ -114,11 +115,14 @@ export default function Hero() {
             </div>
           ))}
 
-          {/* Zeppelin — slow cinematic cruise across the sky, loops off-screen */}
-          <div className="animate-cruise absolute left-0 top-[19%] w-[22%]">
+          {/* Zeppelin — gentle levitation in place, same as the islands */}
+          <div
+            className="animate-float absolute left-0 top-[19%] w-[22%]"
+            style={{ animationDuration: "8s", animationDelay: "0.4s" }}
+          >
             <Image
               src="/images/zeppelin.png"
-              alt="Airship cruising over Alysium Builds"
+              alt="Airship hovering over Alysium Builds"
               width={1254}
               height={1254}
               className="h-auto w-full drop-shadow-[0_14px_24px_rgba(0,0,0,0.5)]"
