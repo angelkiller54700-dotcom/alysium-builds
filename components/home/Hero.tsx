@@ -44,10 +44,9 @@ const allLights = [...castleLights, ...lanternLights];
 // they zoom/pan together with it on scroll.
 const floatingIslands = [
   { src: "/images/island-1.png", x: 29, y: -2, width: 16, duration: 7, delay: 0 },
-  { src: "/images/island-2.png", x: 1, y: 6, width: 13, duration: 8.5, delay: 1.2 },
   // Repositioned to sit near the "U" of "PREMIUM" in the headline, behind the text.
   { src: "/images/island-3.png", x: 27, y: 29, width: 11, duration: 6.5, delay: 0.6 },
-  // island-4 (far top-right) removed per feedback — felt redundant/cut off at the edge.
+  // island-2 (far top-left) and island-4 (far top-right) removed per feedback.
 ];
 
 /**
@@ -139,18 +138,34 @@ export default function Hero() {
             />
           </div>
 
+          {/* Drifting ground mist — the valley below/right of the castle */}
+          <div className="pointer-events-none absolute inset-0 overflow-hidden">
+            <div
+              className="absolute left-[56%] top-[56%] h-[20%] w-[24%] animate-drift-slow rounded-full bg-white/10 blur-3xl"
+              style={{ animationDelay: "1s" }}
+            />
+            <div
+              className="absolute left-[65%] top-[66%] h-[16%] w-[18%] animate-drift rounded-full bg-violet-200/10 blur-2xl"
+              style={{ animationDelay: "4s" }}
+            />
+            <div
+              className="absolute left-[59%] top-[71%] h-[13%] w-[15%] animate-drift-slow rounded-full bg-white/10 blur-2xl"
+              style={{ animationDelay: "9s" }}
+            />
+          </div>
+
           {/* Flickering lights — castle windows + foreground lanterns */}
           <div className="pointer-events-none absolute inset-0">
             {allLights.map((light, i) => (
               <span
                 key={i}
-                className="absolute animate-twinkle rounded-full bg-amber-300"
+                className="absolute animate-flicker rounded-full bg-amber-300"
                 style={{
                   left: `${light.x}%`,
                   top: `${light.y}%`,
                   width: light.size,
                   height: light.size,
-                  boxShadow: `0 0 ${light.size * 3}px ${light.size * 0.8}px rgba(251,191,36,0.5)`,
+                  boxShadow: `0 0 ${light.size * 4}px ${light.size * 1.1}px rgba(251,191,36,0.65)`,
                   animationDuration: `${light.duration}s`,
                   animationDelay: `${light.delay}s`,
                 }}
