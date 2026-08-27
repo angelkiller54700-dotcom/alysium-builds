@@ -46,6 +46,8 @@ const config: Config = {
         float: "float 6s ease-in-out infinite",
         "pulse-slow": "pulse 4s ease-in-out infinite",
         twinkle: "twinkle 3s ease-in-out infinite",
+        drift: "drift 46s ease-in-out infinite",
+        "drift-slow": "drift 68s ease-in-out infinite reverse",
       },
       keyframes: {
         float: {
@@ -55,6 +57,10 @@ const config: Config = {
         twinkle: {
           "0%, 100%": { opacity: "0.25" },
           "50%": { opacity: "1" },
+        },
+        drift: {
+          "0%, 100%": { transform: "translate(0, 0)" },
+          "50%": { transform: "translate(4%, 1.5%)" },
         },
       },
     },

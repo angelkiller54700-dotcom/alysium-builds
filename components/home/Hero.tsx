@@ -6,6 +6,38 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, Package, Sparkles } from "lucide-react";
 import Button from "@/components/shared/Button";
 
+/** Deterministic PRNG so light positions match between server and client render. */
+function mulberry32(seed: number) {
+  let a = seed;
+  return function () {
+    a |= 0;
+    a = (a + 0x6d2b79f5) | 0;
+    let t = Math.imul(a ^ (a >>> 15), 1 | a);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+// Scattered flickering lights over the castle windows (as a % of the hero box),
+// plus the visible foreground lanterns pinned to their actual spots in hero.png.
+// Tweak the hand-placed lantern coordinates if you swap in a different image.
+const rand = mulberry32(1337);
+const castleLights = Array.from({ length: 26 }, () => ({
+  x: 47 + rand() * 48,
+  y: 12 + rand() * 42,
+  size: 2 + rand() * 2.5,
+  duration: 2 + rand() * 3,
+  delay: rand() * 5,
+}));
+const lanternLights = [
+  { x: 11, y: 71, size: 7 },
+  { x: 24, y: 79, size: 6 },
+  { x: 54, y: 90, size: 6 },
+  { x: 63, y: 86, size: 5 },
+  { x: 88, y: 74, size: 6 },
+].map((l, i) => ({ ...l, duration: 2.6 + (i % 3) * 0.6, delay: i * 0.7 }));
+const allLights = [...castleLights, ...lanternLights];
+
 /**
  * Signature scroll rig: the section is 220vh tall, the visual scene is
  * `sticky` inside it, and scroll progress across that range drives a light
@@ -34,7 +66,7 @@ export default function Hero() {
   return (
     <section ref={containerRef} className="relative h-[220vh]">
       <div className="sticky top-0 h-screen w-full overflow-hidden bg-ink-950">
-        {/* Hero image — zoom + pan on scroll */}
+        {/* Hero image + its overlays — all zoom/pan together on scroll */}
         <motion.div
           style={{ scale: imageScale, y: imageY }}
           className="absolute inset-0"
@@ -47,6 +79,35 @@ export default function Hero() {
             className="object-cover"
             sizes="100vw"
           />
+
+          {/* Drifting cloud haze — subtle atmospheric motion over the sky */}
+          <div className="pointer-events-none absolute inset-0 overflow-hidden">
+            <div className="absolute left-[2%] top-0 h-[38%] w-[50%] animate-drift rounded-full bg-orange-200/10 blur-3xl" />
+            <div className="absolute right-[8%] top-[3%] h-[30%] w-[38%] animate-drift-slow rounded-full bg-violet-200/10 blur-3xl" />
+            <div
+              className="absolute left-[30%] top-0 h-[24%] w-[32%] animate-drift rounded-full bg-white/5 blur-2xl"
+              style={{ animationDelay: "7s" }}
+            />
+          </div>
+
+          {/* Flickering lights — castle windows + foreground lanterns */}
+          <div className="pointer-events-none absolute inset-0">
+            {allLights.map((light, i) => (
+              <span
+                key={i}
+                className="absolute animate-twinkle rounded-full bg-amber-300"
+                style={{
+                  left: `${light.x}%`,
+                  top: `${light.y}%`,
+                  width: light.size,
+                  height: light.size,
+                  boxShadow: `0 0 ${light.size * 3}px ${light.size * 0.8}px rgba(251,191,36,0.5)`,
+                  animationDuration: `${light.duration}s`,
+                  animationDelay: `${light.delay}s`,
+                }}
+              />
+            ))}
+          </div>
         </motion.div>
 
         {/* Violet fog, for depth + brand continuity */}
