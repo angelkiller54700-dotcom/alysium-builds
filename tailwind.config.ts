@@ -61,11 +61,11 @@ const config: Config = {
           "50%": { opacity: "1" },
         },
         flicker: {
-          "0%, 100%": { opacity: "0.35", transform: "scale(0.85)" },
-          "20%": { opacity: "0.9", transform: "scale(1.08)" },
-          "45%": { opacity: "0.5", transform: "scale(0.88)" },
-          "70%": { opacity: "1", transform: "scale(1.2)" },
-          "85%": { opacity: "0.6", transform: "scale(0.95)" },
+          "0%, 100%": { opacity: "0.25", transform: "scale(0.92)" },
+          "20%": { opacity: "0.95", transform: "scale(1.03)" },
+          "45%": { opacity: "0.4", transform: "scale(0.94)" },
+          "70%": { opacity: "1", transform: "scale(1.08)" },
+          "85%": { opacity: "0.55", transform: "scale(0.97)" },
         },
         drift: {
           "0%, 100%": { transform: "translate(0, 0)" },
