@@ -12,7 +12,8 @@ export type ProjectCategory =
   | "Fantasy"
   | "Medieval"
   | "Modern"
-  | "Maps";
+  | "Maps"
+  | "Faction";
 
 export type GalleryShot = {
   label: string;
@@ -81,6 +82,7 @@ export const projectCategories: ProjectCategory[] = [
   "Medieval",
   "Modern",
   "Maps",
+  "Faction",
 ];
 
 export const resourceCategories: ResourceCategory[] = [

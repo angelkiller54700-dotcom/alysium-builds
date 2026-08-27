@@ -2,7 +2,7 @@
   "slug": "ashenkeep-castle",
   "name": "Ashenkeep Castle",
   "type": "Faction",
-  "categories": ["Medieval", "Fantasy"],
+  "categories": ["Medieval", "Fantasy", "Faction"],
   "description": "A dark medieval stronghold built for factions, sieges, and wars.",
   "longDescription": "Ashenkeep Castle is a siege-ready fortress built for faction and war servers. Layered walls, defensible chokepoints, and a fully furnished keep interior give raiders and defenders equally interesting fights, without sacrificing atmosphere.",
   "version": "1.20.1",

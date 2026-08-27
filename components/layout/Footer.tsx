@@ -1,6 +1,6 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
-  Gem,
   MessageCircle,
   Mail,
   Instagram,
@@ -31,13 +31,14 @@ export default function Footer() {
     <footer className="relative overflow-hidden border-t border-white/10 bg-ink-950">
       <div className="container-page grid grid-cols-1 gap-12 py-16 lg:grid-cols-[1.3fr_1fr_1fr_1fr_1fr]">
         <div>
-          <Link href="/" className="flex items-center gap-2.5">
-            <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-accent-400 to-accent-700">
-              <Gem className="h-5 w-5 text-white" />
-            </span>
-            <span className="font-display text-lg font-bold text-white">
-              ALYSIUM BUILDS
-            </span>
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/images/logo.png"
+              alt="Alysium Builds"
+              width={2172}
+              height={724}
+              className="h-10 w-auto"
+            />
           </Link>
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/50">
             Premium Minecraft builds and custom maps for servers,

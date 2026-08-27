@@ -54,7 +54,7 @@ collections:
         name: "categories"
         widget: "select"
         multiple: true
-        options: ["Hubs", "Spawns", "Survival", "Fantasy", "Medieval", "Modern", "Maps"]
+        options: ["Hubs", "Spawns", "Survival", "Fantasy", "Medieval", "Modern", "Maps", "Faction"]
       - { label: "Short description", name: "description", widget: "text" }
       - { label: "Long description", name: "longDescription", widget: "text" }
       - { label: "Minecraft version", name: "version", widget: "string" }

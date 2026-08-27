@@ -2,9 +2,10 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
-import { Gem, Menu, MessageCircle, X } from "lucide-react";
+import { Menu, MessageCircle, X } from "lucide-react";
 import { cn, SITE } from "@/lib/utils";
 
 const NAV_LINKS = [
@@ -42,13 +43,15 @@ export default function Navbar() {
       )}
     >
       <div className="container-page flex h-20 items-center justify-between">
-        <Link href="/" className="flex items-center gap-2.5">
-          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-accent-400 to-accent-700 shadow-glow-sm">
-            <Gem className="h-5 w-5 text-white" />
-          </span>
-          <span className="font-display text-lg font-bold tracking-wide text-white">
-            ALYSIUM <span className="text-accent-300">BUILDS</span>
-          </span>
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/images/logo.png"
+            alt="Alysium Builds"
+            width={2172}
+            height={724}
+            priority
+            className="h-11 w-auto sm:h-12"
+          />
         </Link>
 
         <nav className="hidden items-center gap-8 lg:flex">
