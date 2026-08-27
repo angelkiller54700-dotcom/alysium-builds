@@ -95,7 +95,7 @@ collections:
           - { label: "Image", name: "image", widget: "image", required: false }
           - { label: "Placeholder art seed", name: "seed", widget: "number", value_type: "int" }
       - {
-          label: "BuiltByBit link (optional)",
+          label: "BuiltByBit link",
           name: "resourceLink",
           widget: "string",
           required: false,
