@@ -2,10 +2,10 @@ import Image from "next/image";
 import { Boxes, ShieldCheck, Sparkles, Users } from "lucide-react";
 
 const STATS = [
-  { icon: Boxes, value: "25+", label: "Projects" },
-  { icon: Users, value: "10+", label: "Server Owners" },
-  { icon: Sparkles, value: "500k+", label: "Blocks Placed" },
-  { icon: ShieldCheck, value: "100%", label: "Original Builds" },
+  { icon: Boxes, value: "25+", label: "Projets" },
+  { icon: Users, value: "10+", label: "Propriétaires de Serveurs" },
+  { icon: Sparkles, value: "500k+", label: "Blocs Placés" },
+  { icon: ShieldCheck, value: "100%", label: "Créations Originales" },
 ];
 
 export default function PortfolioHero() {
@@ -13,7 +13,7 @@ export default function PortfolioHero() {
     <section className="relative h-[440px] w-full overflow-hidden sm:h-[500px] lg:h-[560px]">
       <Image
         src="/images/portfolio-wallpaper.png"
-        alt="A moonlit fantasy castle floating above the clouds"
+        alt="Un château fantastique éclairé par la lune, flottant au-dessus des nuages"
         fill
         priority
         className="object-cover"
@@ -24,15 +24,15 @@ export default function PortfolioHero() {
 
       <div className="container-page relative flex h-full flex-col justify-center pt-16">
         <h1 className="max-w-2xl font-display text-4xl font-bold leading-[1.05] text-white sm:text-5xl lg:text-6xl">
-          BUILDS WORTH
+          DES BUILDS
           <br />
           <span className="bg-gradient-to-r from-accent-300 via-accent-400 to-accent-600 bg-clip-text text-transparent">
-            EXPLORING.
+            À EXPLORER.
           </span>
         </h1>
         <p className="mt-5 max-w-lg text-white/60">
-          A curated collection of hubs, spawns, survival worlds, and custom
-          maps — all crafted with detail and passion.
+          Une sélection de hubs, spawns, mondes survie et maps sur mesure —
+          tous conçus avec soin et passion.
         </p>
 
         <div className="mt-9 flex flex-wrap gap-x-10 gap-y-4">

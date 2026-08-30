@@ -43,13 +43,13 @@ export default function ProjectPage({
   if (!project) notFound();
 
   const info = [
-    { icon: Gamepad2, label: "Game", value: project.game },
+    { icon: Gamepad2, label: "Jeu", value: project.game },
     { icon: Layers, label: "Type", value: project.type },
-    { icon: Ruler, label: "Size", value: project.size },
+    { icon: Ruler, label: "Taille", value: project.size },
     { icon: Blocks, label: "Version", value: project.version },
-    { icon: DoorOpen, label: "Interiors", value: project.interiors ? "Included" : "Not included" },
-    { icon: Mountain, label: "Custom Terrain", value: project.customTerrain ? "Yes" : "No" },
-    { icon: Wrench, label: "Tools Used", value: project.toolsUsed.join(", ") },
+    { icon: DoorOpen, label: "Intérieurs", value: project.interiors ? "Inclus" : "Non inclus" },
+    { icon: Mountain, label: "Terrain Sur Mesure", value: project.customTerrain ? "Oui" : "Non" },
+    { icon: Wrench, label: "Outils Utilisés", value: project.toolsUsed.join(", ") },
   ];
 
   return (
@@ -100,19 +100,19 @@ export default function ProjectPage({
         {/* Gallery */}
         {project.gallery.length > 0 && (
           <div className="mt-16">
-            <h2 className="font-display text-xl font-semibold text-white">Gallery</h2>
+            <h2 className="font-display text-xl font-semibold text-white">Galerie</h2>
             <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2">
               {project.gallery.map((src, i) => (
                 <div key={src} className="glass-card overflow-hidden">
                   <div className="relative aspect-video w-full">
                     <Image
                       src={src}
-                      alt={`${project.name} — screenshot ${i + 1}`}
+                      alt={`${project.name} — capture ${i + 1}`}
                       fill
                       className="object-cover"
                     />
                     <span className="absolute bottom-3 left-3 rounded-full border border-white/15 bg-black/50 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-white/80 backdrop-blur-sm">
-                      Screenshot {i + 1}
+                      Capture {i + 1}
                     </span>
                   </div>
                 </div>
@@ -125,21 +125,21 @@ export default function ProjectPage({
         <div className="glass-panel mt-16 flex flex-col items-start gap-5 rounded-2xl p-8 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <h3 className="font-display text-lg font-semibold text-white">
-              Like what you see?
+              Ça te plaît ?
             </h3>
             <p className="mt-1 text-sm text-white/55">
-              Grab this build if it&apos;s available, or commission something
-              built entirely around your vision.
+              Récupère ce build s&apos;il est disponible, ou commande une
+              création entièrement pensée pour toi.
             </p>
           </div>
           <div className="flex flex-wrap gap-3">
             {project.resourceLink && (
               <Button href={project.resourceLink} external icon={<ShoppingBag className="h-4 w-4" />}>
-                Buy on BuiltByBit
+                Acheter sur BuiltByBit
               </Button>
             )}
             <Button href="/custom-builds" variant="secondary">
-              Request a Custom Build
+              Commander un Build Sur Mesure
             </Button>
             <Button href={SITE.discord} external variant="ghost" icon={<MessageCircle className="h-4 w-4" />}>
               Discord

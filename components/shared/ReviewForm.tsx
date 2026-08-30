@@ -29,12 +29,12 @@ export default function ReviewForm() {
 
       if (!res.ok) {
         const data = await res.json().catch(() => ({}));
-        throw new Error(data.error || "Something went wrong.");
+        throw new Error(data.error || "Une erreur est survenue.");
       }
 
       setStatus("sent");
     } catch (err) {
-      setErrorMessage(err instanceof Error ? err.message : "Something went wrong.");
+      setErrorMessage(err instanceof Error ? err.message : "Une erreur est survenue.");
       setStatus("error");
     }
   }
@@ -43,9 +43,10 @@ export default function ReviewForm() {
     return (
       <div className="glass-panel flex flex-col items-center gap-3 rounded-2xl px-8 py-16 text-center">
         <CheckCircle2 className="h-10 w-10 text-accent-400" />
-        <h3 className="font-display text-xl font-semibold text-white">Thanks for the review!</h3>
+        <h3 className="font-display text-xl font-semibold text-white">Merci pour ton avis !</h3>
         <p className="max-w-sm text-sm text-white/60">
-          We read every submission — if it&apos;s a good fit, we&apos;ll feature it on the site.
+          On lit chaque avis reçu — s&apos;il colle bien, on le mettra en
+          avant sur le site.
         </p>
       </div>
     );
@@ -66,25 +67,25 @@ export default function ReviewForm() {
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <div>
           <label className={labelClasses} htmlFor="name">
-            Name
+            Nom
           </label>
-          <input id="name" name="name" required className={inputClasses} placeholder="Your name" />
+          <input id="name" name="name" required className={inputClasses} placeholder="Ton nom" />
         </div>
         <div>
           <label className={labelClasses} htmlFor="role">
-            Role
+            Rôle
           </label>
           <input
             id="role"
             name="role"
             className={inputClasses}
-            placeholder="e.g. Server Owner, Network Owner"
+            placeholder="ex. Propriétaire de serveur, Propriétaire de réseau"
           />
         </div>
       </div>
 
       <div className="mt-5">
-        <label className={labelClasses}>Rating</label>
+        <label className={labelClasses}>Note</label>
         <div className="flex gap-1" onMouseLeave={() => setHoverRating(0)}>
           {[1, 2, 3, 4, 5].map((value) => (
             <button
@@ -92,7 +93,7 @@ export default function ReviewForm() {
               type="button"
               onClick={() => setRating(value)}
               onMouseEnter={() => setHoverRating(value)}
-              aria-label={`${value} star${value > 1 ? "s" : ""}`}
+              aria-label={`${value} étoile${value > 1 ? "s" : ""}`}
               className="p-0.5"
             >
               <Star
@@ -109,7 +110,7 @@ export default function ReviewForm() {
 
       <div className="mt-5">
         <label className={labelClasses} htmlFor="quote">
-          Your review
+          Ton avis
         </label>
         <textarea
           id="quote"
@@ -117,7 +118,7 @@ export default function ReviewForm() {
           required
           rows={4}
           className={inputClasses}
-          placeholder="Tell us about your experience working with us..."
+          placeholder="Parle-nous de ton expérience avec nous..."
         />
       </div>
 
@@ -136,12 +137,12 @@ export default function ReviewForm() {
         {status === "submitting" ? (
           <>
             <Loader2 className="h-4 w-4 animate-spin" />
-            Sending...
+            Envoi...
           </>
         ) : (
           <>
             <Send className="h-4 w-4" />
-            Submit Review
+            Envoyer l&apos;Avis
           </>
         )}
       </button>

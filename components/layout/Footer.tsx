@@ -12,18 +12,18 @@ import PlaceholderScene from "@/components/shared/PlaceholderScene";
 import { SITE } from "@/lib/utils";
 
 const QUICK_LINKS = [
-  { href: "/", label: "Home" },
+  { href: "/", label: "Accueil" },
   { href: "/portfolio", label: "Portfolio" },
-  { href: "/resources", label: "Resources" },
-  { href: "/custom-builds", label: "Custom Builds" },
-  { href: "/about", label: "About" },
+  { href: "/resources", label: "Ressources" },
+  { href: "/custom-builds", label: "Sur Mesure" },
+  { href: "/about", label: "À Propos" },
 ];
 
 const SHOP_LINKS = [
   { href: "/resources", label: "Schematics" },
-  { href: "/resources", label: "Building Packs" },
+  { href: "/resources", label: "Packs de Construction" },
   { href: "/resources", label: "Maps" },
-  { href: "/resources", label: "All Products" },
+  { href: "/resources", label: "Tous les Produits" },
 ];
 
 export default function Footer() {
@@ -41,8 +41,8 @@ export default function Footer() {
             />
           </Link>
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/50">
-            Premium Minecraft builds and custom maps for servers,
-            communities, and creators.
+            Builds Minecraft premium et maps sur mesure pour serveurs,
+            communautés et créateurs.
           </p>
           <div className="mt-5 flex gap-3">
             <a
@@ -86,7 +86,7 @@ export default function Footer() {
 
         <div>
           <h4 className="text-xs font-semibold uppercase tracking-widest text-white/40">
-            Quick Links
+            Liens Rapides
           </h4>
           <ul className="mt-4 space-y-2.5">
             {QUICK_LINKS.map((l) => (
@@ -101,7 +101,7 @@ export default function Footer() {
 
         <div>
           <h4 className="text-xs font-semibold uppercase tracking-widest text-white/40">
-            Shop
+            Boutique
           </h4>
           <ul className="mt-4 space-y-2.5">
             {SHOP_LINKS.map((l, i) => (
@@ -116,7 +116,7 @@ export default function Footer() {
 
         <div className="lg:col-span-2">
           <h4 className="text-xs font-semibold uppercase tracking-widest text-white/40">
-            Get In Touch
+            Nous Contacter
           </h4>
           <ul className="mt-4 space-y-3">
             <li>
@@ -127,7 +127,7 @@ export default function Footer() {
                 className="flex items-center gap-2 text-sm text-white/60 hover:text-accent-300"
               >
                 <MessageCircle className="h-4 w-4" />
-                Join our Discord
+                Rejoindre le Discord
               </a>
             </li>
             <li>
@@ -141,7 +141,7 @@ export default function Footer() {
             </li>
             <li className="flex items-center gap-2 text-sm text-white/40">
               <Clock className="h-4 w-4" />
-              Typically replies within 24h
+              Réponse sous 24h en général
             </li>
           </ul>
 
@@ -153,13 +153,13 @@ export default function Footer() {
 
       <div className="border-t border-white/10">
         <div className="container-page flex flex-col items-center justify-between gap-3 py-6 text-xs text-white/40 sm:flex-row">
-          <span>© {new Date().getFullYear()} Alysium Builds. All rights reserved.</span>
+          <span>© {new Date().getFullYear()} Alysium Builds. Tous droits réservés.</span>
           <div className="flex gap-5">
             <Link href="/terms" className="hover:text-white/70">
-              Terms of Service
+              Conditions Générales
             </Link>
             <Link href="/privacy" className="hover:text-white/70">
-              Privacy Policy
+              Politique de Confidentialité
             </Link>
           </div>
         </div>

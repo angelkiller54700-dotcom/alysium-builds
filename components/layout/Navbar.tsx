@@ -9,11 +9,11 @@ import { Menu, MessageCircle, X } from "lucide-react";
 import { cn, SITE } from "@/lib/utils";
 
 const NAV_LINKS = [
-  { href: "/", label: "Home" },
+  { href: "/", label: "Accueil" },
   { href: "/portfolio", label: "Portfolio" },
-  { href: "/resources", label: "Resources" },
-  { href: "/custom-builds", label: "Custom Builds" },
-  { href: "/about", label: "About" },
+  { href: "/resources", label: "Ressources" },
+  { href: "/custom-builds", label: "Sur Mesure" },
+  { href: "/about", label: "À Propos" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -84,14 +84,14 @@ export default function Navbar() {
             className="btn-secondary !border-accent-500/40"
           >
             <MessageCircle className="h-4 w-4" />
-            Join our Discord
+            Rejoindre le Discord
           </a>
         </div>
 
         <button
           className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 text-white lg:hidden"
           onClick={() => setOpen((v) => !v)}
-          aria-label="Toggle menu"
+          aria-label="Ouvrir/fermer le menu"
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
@@ -123,7 +123,7 @@ export default function Navbar() {
                 className="btn-primary mt-2 justify-center"
               >
                 <MessageCircle className="h-4 w-4" />
-                Join our Discord
+                Rejoindre le Discord
               </a>
             </nav>
           </motion.div>

@@ -34,7 +34,7 @@ export default function ProjectCard({ project }: { project: Project }) {
         type="button"
         onClick={() => toggle(project.slug)}
         aria-pressed={saved}
-        aria-label={saved ? `Remove ${project.name} from saved` : `Save ${project.name}`}
+        aria-label={saved ? `Retirer ${project.name} des favoris` : `Ajouter ${project.name} aux favoris`}
         className="absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-full border border-white/15 bg-black/50 text-white/80 backdrop-blur-sm transition-colors hover:border-accent-400/60 hover:text-accent-300"
       >
         <Bookmark className={saved ? "h-3.5 w-3.5 fill-accent-400 text-accent-400" : "h-3.5 w-3.5"} />
@@ -58,7 +58,7 @@ export default function ProjectCard({ project }: { project: Project }) {
             href={`/portfolio/${project.slug}`}
             className="inline-flex shrink-0 items-center gap-1 rounded-full border border-accent-500/40 bg-accent-500/10 px-3 py-1.5 text-xs font-semibold text-accent-200 transition-colors hover:bg-accent-500/20"
           >
-            View Project
+            Voir le Projet
             <ArrowUpRight className="h-3 w-3" />
           </Link>
         </div>

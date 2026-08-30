@@ -27,12 +27,12 @@ export default function ContactForm() {
 
       if (!res.ok) {
         const data = await res.json().catch(() => ({}));
-        throw new Error(data.error || "Something went wrong.");
+        throw new Error(data.error || "Une erreur est survenue.");
       }
 
       setStatus("sent");
     } catch (err) {
-      setErrorMessage(err instanceof Error ? err.message : "Something went wrong.");
+      setErrorMessage(err instanceof Error ? err.message : "Une erreur est survenue.");
       setStatus("error");
     }
   }
@@ -42,11 +42,11 @@ export default function ContactForm() {
       <div className="glass-panel flex flex-col items-center gap-3 rounded-2xl px-8 py-16 text-center">
         <CheckCircle2 className="h-10 w-10 text-accent-400" />
         <h3 className="font-display text-xl font-semibold text-white">
-          Request sent
+          Demande envoyée
         </h3>
         <p className="max-w-sm text-sm text-white/60">
-          Thanks for reaching out. We typically reply within 24 hours — feel
-          free to join our Discord in the meantime.
+          Merci de nous avoir contactés. On répond généralement sous 24
+          heures — n&apos;hésite pas à rejoindre notre Discord en attendant.
         </p>
       </div>
     );
@@ -67,15 +67,15 @@ export default function ContactForm() {
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <div>
           <label className={labelClasses} htmlFor="name">
-            Name
+            Nom
           </label>
-          <input id="name" name="name" required className={inputClasses} placeholder="Your name" />
+          <input id="name" name="name" required className={inputClasses} placeholder="Ton nom" />
         </div>
         <div>
           <label className={labelClasses} htmlFor="discord">
             Discord
           </label>
-          <input id="discord" name="discord" className={inputClasses} placeholder="username" />
+          <input id="discord" name="discord" className={inputClasses} placeholder="pseudo" />
         </div>
 
         <div>
@@ -88,44 +88,44 @@ export default function ContactForm() {
             type="email"
             required
             className={inputClasses}
-            placeholder="you@email.com"
+            placeholder="toi@email.com"
           />
         </div>
         <div>
           <label className={labelClasses} htmlFor="projectType">
-            Project Type
+            Type de Projet
           </label>
           <select id="projectType" name="projectType" className={inputClasses} defaultValue="">
             <option value="" disabled>
-              Select a type
+              Choisis un type
             </option>
             <option>Spawn</option>
             <option>Hub</option>
-            <option>Custom Map</option>
-            <option>Buildings</option>
-            <option>Full Server Environment</option>
-            <option>Other</option>
+            <option>Map Sur Mesure</option>
+            <option>Bâtiments</option>
+            <option>Environnement de Serveur Complet</option>
+            <option>Autre</option>
           </select>
         </div>
 
         <div>
           <label className={labelClasses} htmlFor="version">
-            Minecraft Version
+            Version Minecraft
           </label>
-          <input id="version" name="version" className={inputClasses} placeholder="e.g. 1.20.4" />
+          <input id="version" name="version" className={inputClasses} placeholder="ex. 1.20.4" />
         </div>
         <div>
           <label className={labelClasses} htmlFor="size">
-            Approximate Size
+            Taille Approximative
           </label>
-          <input id="size" name="size" className={inputClasses} placeholder="e.g. 200x200 blocks" />
+          <input id="size" name="size" className={inputClasses} placeholder="ex. 200x200 blocs" />
         </div>
 
         <div>
           <label className={labelClasses} htmlFor="style">
             Style
           </label>
-          <input id="style" name="style" className={inputClasses} placeholder="e.g. Medieval fantasy" />
+          <input id="style" name="style" className={inputClasses} placeholder="ex. Fantasy médiéval" />
         </div>
         <div>
           <label className={labelClasses} htmlFor="budget">
@@ -133,26 +133,26 @@ export default function ContactForm() {
           </label>
           <select id="budget" name="budget" className={inputClasses} defaultValue="">
             <option value="" disabled>
-              Select a range
+              Choisis une fourchette
             </option>
-            <option>Under $50</option>
-            <option>$50 – $100</option>
-            <option>$100 – $250</option>
-            <option>$250 – $500</option>
-            <option>$500+</option>
+            <option>Moins de 50 €</option>
+            <option>50 € – 100 €</option>
+            <option>100 € – 250 €</option>
+            <option>250 € – 500 €</option>
+            <option>500 €+</option>
           </select>
         </div>
 
         <div className="sm:col-span-2">
           <label className={labelClasses} htmlFor="deadline">
-            Deadline
+            Délai
           </label>
-          <input id="deadline" name="deadline" className={inputClasses} placeholder="e.g. Flexible, or a target date" />
+          <input id="deadline" name="deadline" className={inputClasses} placeholder="ex. Flexible, ou une date cible" />
         </div>
 
         <div className="sm:col-span-2">
           <label className={labelClasses} htmlFor="description">
-            Project Description
+            Description du Projet
           </label>
           <textarea
             id="description"
@@ -160,20 +160,20 @@ export default function ContactForm() {
             required
             rows={4}
             className={inputClasses}
-            placeholder="Tell us about your vision..."
+            placeholder="Parle-nous de ta vision..."
           />
         </div>
 
         <div className="sm:col-span-2">
           <label className={labelClasses} htmlFor="references">
-            References / Inspiration
+            Références / Inspirations
           </label>
           <textarea
             id="references"
             name="references"
             rows={2}
             className={inputClasses}
-            placeholder="Links to servers, builds, or images that inspire this project"
+            placeholder="Liens vers des serveurs, builds ou images qui inspirent ce projet"
           />
         </div>
       </div>
@@ -193,12 +193,12 @@ export default function ContactForm() {
         {status === "submitting" ? (
           <>
             <Loader2 className="h-4 w-4 animate-spin" />
-            Sending...
+            Envoi...
           </>
         ) : (
           <>
             <Send className="h-4 w-4" />
-            Send Request
+            Envoyer la Demande
           </>
         )}
       </button>

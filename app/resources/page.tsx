@@ -5,9 +5,9 @@ import ResourcesGrid from "@/components/shared/ResourcesGrid";
 import { getResources } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Resources",
+  title: "Ressources",
   description:
-    "Premium Minecraft spawns, schematics, building packs, maps, terrain, and decorations — available on BuiltByBit.",
+    "Spawns, schematics, packs de construction, maps, terrains et décorations Minecraft premium — disponibles sur BuiltByBit.",
 };
 
 export default function ResourcesPage() {
@@ -17,15 +17,15 @@ export default function ResourcesPage() {
     <div>
       <PageBanner
         image="/images/banner-resources.png"
-        eyebrow="Resources"
-        title="Ready-to-use Minecraft assets."
-        subtitle="Spawns, schematics, building packs, maps, and more — built to the same premium standard as our custom work."
+        eyebrow="Ressources"
+        title="Des assets Minecraft prêts à l'emploi."
+        subtitle="Spawns, schematics, packs de construction, maps, et plus — conçus avec le même niveau d'exigence que nos créations sur mesure."
       />
 
       <div className="container-page pb-28 pt-14">
         <div className="flex items-center gap-2 text-xs text-white/40">
           <Info className="h-3.5 w-3.5" />
-          Every product links out to our BuiltByBit storefront for secure checkout.
+          Chaque produit renvoie vers notre boutique BuiltByBit pour un paiement sécurisé.
         </div>
 
         <div className="mt-8">

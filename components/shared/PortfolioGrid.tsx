@@ -37,10 +37,18 @@ const FILTER_ICONS: Record<(typeof FILTERS)[number], LucideIcon> = {
 type SortOption = "latest" | "name" | "featured";
 
 const SORT_LABELS: Record<SortOption, string> = {
-  latest: "Latest",
-  name: "Name (A–Z)",
-  featured: "Featured First",
+  latest: "Récents",
+  name: "Nom (A–Z)",
+  featured: "Mis en avant d'abord",
 };
+
+/** "All" is the internal key everywhere (filter logic, icon map) — only its
+ * displayed label is French. Every other category keeps its English name,
+ * since Minecraft community jargon (Hub, Spawn, Survival...) is used as-is
+ * in French too. */
+function filterLabel(filter: string) {
+  return filter === "All" ? "Tous" : filter;
+}
 
 function sortProjects(projects: Project[], sort: SortOption): Project[] {
   const copy = [...projects];
@@ -80,7 +88,7 @@ export default function PortfolioGrid({ projects }: { projects: Project[] }) {
                 )}
               >
                 <Icon className="h-3.5 w-3.5" />
-                {filter}
+                {filterLabel(filter)}
               </button>
             );
           })}
@@ -104,7 +112,7 @@ export default function PortfolioGrid({ projects }: { projects: Project[] }) {
               type="button"
               onClick={() => setView("grid")}
               aria-pressed={view === "grid"}
-              aria-label="Grid view"
+              aria-label="Vue grille"
               className={cn(
                 "flex h-8 w-8 items-center justify-center rounded-full transition-colors",
                 view === "grid" ? "bg-accent-500/20 text-accent-200" : "text-white/50 hover:text-white/80"
@@ -116,7 +124,7 @@ export default function PortfolioGrid({ projects }: { projects: Project[] }) {
               type="button"
               onClick={() => setView("list")}
               aria-pressed={view === "list"}
-              aria-label="List view"
+              aria-label="Vue liste"
               className={cn(
                 "flex h-8 w-8 items-center justify-center rounded-full transition-colors",
                 view === "list" ? "bg-accent-500/20 text-accent-200" : "text-white/50 hover:text-white/80"
@@ -167,7 +175,7 @@ export default function PortfolioGrid({ projects }: { projects: Project[] }) {
 
       {filtered.length === 0 && (
         <p className="mt-16 text-center text-white/50">
-          No projects in this category yet.
+          Aucun projet dans cette catégorie pour le moment.
         </p>
       )}
     </div>

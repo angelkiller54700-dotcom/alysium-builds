@@ -8,6 +8,10 @@ import { resourceCategories, type Resource, type ResourceCategory } from "@/data
 
 const FILTERS: ("All" | ResourceCategory)[] = ["All", ...resourceCategories];
 
+function filterLabel(filter: string) {
+  return filter === "All" ? "Tous" : filter;
+}
+
 export default function ResourcesGrid({ resources }: { resources: Resource[] }) {
   const [active, setActive] = useState<(typeof FILTERS)[number]>("All");
 
@@ -30,7 +34,7 @@ export default function ResourcesGrid({ resources }: { resources: Resource[] }) 
                 : "border-white/10 text-white/60 hover:border-white/25 hover:text-white/90"
             )}
           >
-            {filter}
+            {filterLabel(filter)}
           </button>
         ))}
       </div>

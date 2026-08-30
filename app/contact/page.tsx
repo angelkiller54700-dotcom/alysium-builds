@@ -7,7 +7,7 @@ import { SITE } from "@/lib/utils";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Get in touch with Alysium Builds to discuss a custom Minecraft build or ask about our resources.",
+    "Contacte Alysium Builds pour discuter d'un build Minecraft sur mesure ou pour toute question sur nos ressources.",
 };
 
 export default function ContactPage() {
@@ -16,8 +16,8 @@ export default function ContactPage() {
       <PageBanner
         image="/images/banner-contact.png"
         eyebrow="Contact"
-        title="Let's talk about your project."
-        subtitle="Fill out the form with as much detail as you can — it helps us scope your project accurately and reply faster."
+        title="Parlons de ton projet."
+        subtitle="Remplis le formulaire avec un maximum de détails — ça nous aide à évaluer ton projet précisément et à te répondre plus vite."
       />
 
       <div className="container-page pb-28 pt-14 grid grid-cols-1 gap-8 lg:grid-cols-[1fr_360px]">
@@ -28,7 +28,8 @@ export default function ContactPage() {
             <MessageCircle className="h-5 w-5 text-accent-400" />
             <h3 className="mt-3 text-sm font-semibold text-white">Discord</h3>
             <p className="mt-1 text-sm text-white/50">
-              Fastest way to reach us — join the community and open a ticket.
+              Le moyen le plus rapide de nous joindre — rejoins la
+              communauté et ouvre un ticket.
             </p>
             <a
               href={SITE.discord}
@@ -36,7 +37,7 @@ export default function ContactPage() {
               rel="noopener noreferrer"
               className="btn-ghost mt-3"
             >
-              Join our Discord
+              Rejoindre le Discord
             </a>
           </div>
 
@@ -44,7 +45,7 @@ export default function ContactPage() {
             <Mail className="h-5 w-5 text-accent-400" />
             <h3 className="mt-3 text-sm font-semibold text-white">Email</h3>
             <p className="mt-1 text-sm text-white/50">
-              Prefer email? Send us the details directly.
+              Tu préfères l&apos;email ? Envoie-nous les détails directement.
             </p>
             <a href={`mailto:${SITE.email}`} className="btn-ghost mt-3">
               {SITE.email}
@@ -53,9 +54,10 @@ export default function ContactPage() {
 
           <div className="glass-panel rounded-2xl p-6">
             <Clock className="h-5 w-5 text-accent-400" />
-            <h3 className="mt-3 text-sm font-semibold text-white">Response Time</h3>
+            <h3 className="mt-3 text-sm font-semibold text-white">Délai de Réponse</h3>
             <p className="mt-1 text-sm text-white/50">
-              We typically reply within 24 hours, every day of the week.
+              On répond généralement sous 24 heures, tous les jours de la
+              semaine.
             </p>
           </div>
         </div>

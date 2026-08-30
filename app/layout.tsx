@@ -19,12 +19,12 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: `${SITE.name} — Premium Minecraft Builds & Custom Maps`,
+    default: `${SITE.name} — Builds Minecraft Premium & Maps Sur Mesure`,
     template: `%s — ${SITE.name}`,
   },
   description: SITE.description,
   openGraph: {
-    title: `${SITE.name} — Premium Minecraft Builds & Custom Maps`,
+    title: `${SITE.name} — Builds Minecraft Premium & Maps Sur Mesure`,
     description: SITE.description,
     url: SITE.url,
     siteName: SITE.name,
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${SITE.name} — Premium Minecraft Builds & Custom Maps`,
+    title: `${SITE.name} — Builds Minecraft Premium & Maps Sur Mesure`,
     description: SITE.description,
   },
 };
@@ -43,7 +43,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${sora.variable} ${inter.variable}`}>
+    <html lang="fr" className={`${sora.variable} ${inter.variable}`}>
       <body className="overflow-x-hidden">
         <Navbar />
         <main>{children}</main>

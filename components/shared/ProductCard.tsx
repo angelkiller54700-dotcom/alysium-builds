@@ -38,7 +38,7 @@ export default function ProductCard({ resource }: { resource: Resource }) {
             target="_blank"
             rel="noopener noreferrer"
             className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-white/80 transition-colors hover:border-accent-400/60 hover:bg-accent-500/10 hover:text-accent-300"
-            aria-label={`Buy ${resource.name} on BuiltByBit`}
+            aria-label={`Acheter ${resource.name} sur BuiltByBit`}
           >
             <ShoppingCart className="h-4 w-4" />
           </a>

@@ -7,7 +7,7 @@ export function cn(...inputs: ClassValue[]) {
 export const SITE = {
   name: "Alysium Builds",
   description:
-    "Premium Minecraft builds, custom maps, and original creations built to elevate your server and community.",
+    "Builds Minecraft premium, maps sur mesure et créations originales pour sublimer ton serveur et ta communauté.",
   // TODO: swap for your real domain once you have one (e.g. alysiumbuilds.com) — Vercel's URL works fine until then.
   url: "https://alysium-builds.vercel.app",
   discord: "https://discord.gg/4xK79z5HxS",

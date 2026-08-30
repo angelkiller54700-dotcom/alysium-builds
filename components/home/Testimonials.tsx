@@ -9,9 +9,9 @@ export default function Testimonials() {
     <section className="container-page py-20 sm:py-28">
       <SectionHeading
         icon={Star}
-        eyebrow="Trusted by Server Owners"
+        eyebrow="Ils Nous Font Confiance"
         viewAllHref="/leave-a-review"
-        viewAllLabel="Leave a review"
+        viewAllLabel="Laisser un avis"
       />
       <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-3">
         {testimonials.map((t) => (

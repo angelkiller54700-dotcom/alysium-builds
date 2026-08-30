@@ -2,9 +2,9 @@ import { Gem, Sparkles, ShieldCheck, Gauge } from "lucide-react";
 import Button from "@/components/shared/Button";
 
 const BENEFITS = [
-  { icon: Sparkles, label: "100% Original Builds" },
-  { icon: Gauge, label: "Optimized & Server Friendly" },
-  { icon: ShieldCheck, label: "Detailed & High Quality" },
+  { icon: Sparkles, label: "100% de Créations Originales" },
+  { icon: Gauge, label: "Optimisé & Adapté aux Serveurs" },
+  { icon: ShieldCheck, label: "Détaillé & Haute Qualité" },
 ];
 
 export default function CustomBuildsCTA() {
@@ -19,15 +19,15 @@ export default function CustomBuildsCTA() {
 
           <div>
             <h2 className="font-display text-2xl font-bold text-white sm:text-3xl">
-              CUSTOM BUILDS,{" "}
+              BUILDS SUR MESURE,{" "}
               <span className="bg-gradient-to-r from-accent-300 to-accent-500 bg-clip-text text-transparent">
-                TAILORED TO YOUR VISION
+                À L&apos;IMAGE DE TA VISION
               </span>
             </h2>
             <p className="mt-3 max-w-xl text-sm leading-relaxed text-white/55 sm:text-base">
-              Need something unique? We create custom builds, maps, and
-              server environments specifically for your community or
-              project.
+              Besoin de quelque chose d&apos;unique ? Nous créons des
+              builds, maps et environnements de serveur sur mesure,
+              spécialement pour ta communauté ou ton projet.
             </p>
             <div className="mt-5 flex flex-wrap gap-x-6 gap-y-2">
               {BENEFITS.map((b) => (
@@ -41,9 +41,9 @@ export default function CustomBuildsCTA() {
 
           <div className="flex flex-col items-start gap-2 lg:items-end">
             <Button href="/custom-builds" showArrow>
-              Order a Custom Build
+              Commander un Build Sur Mesure
             </Button>
-            <span className="text-xs text-white/40">Let&apos;s bring your ideas to life.</span>
+            <span className="text-xs text-white/40">Donnons vie à tes idées.</span>
           </div>
         </div>
       </div>

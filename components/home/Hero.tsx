@@ -84,7 +84,7 @@ export default function Hero() {
         >
           <Image
             src="/images/hero.png"
-            alt="Alysium Builds — a fantasy Minecraft castle at sunset, surrounded by floating islands"
+            alt="Alysium Builds — un château Minecraft fantastique au coucher du soleil, entouré d'îles flottantes"
             fill
             priority
             className="object-cover"
@@ -121,7 +121,7 @@ export default function Hero() {
           >
             <Image
               src="/images/zeppelin.png"
-              alt="Airship hovering over Alysium Builds"
+              alt="Dirigeable en lévitation au-dessus d'Alysium Builds"
               width={1254}
               height={1254}
               className="h-auto w-full drop-shadow-[0_14px_24px_rgba(0,0,0,0.5)]"
@@ -194,30 +194,30 @@ export default function Hero() {
         >
           <div className="eyebrow mb-6 w-fit rounded-full border border-accent-500/30 bg-accent-500/10 px-4 py-1.5">
             <Sparkles className="h-3.5 w-3.5" />
-            Premium. Professional. Immersive.
+            Premium. Professionnel. Immersif.
           </div>
 
           <h1 className="max-w-2xl font-display text-5xl font-bold leading-[1.05] text-white sm:text-6xl lg:text-7xl">
-            PREMIUM
+            BUILDS
             <br />
             <span className="bg-gradient-to-r from-accent-300 via-accent-400 to-accent-600 bg-clip-text text-transparent">
               MINECRAFT
             </span>
             <br />
-            BUILDS
+            PREMIUM
           </h1>
 
           <p className="mt-6 max-w-md text-base leading-relaxed text-white/60 sm:text-lg">
-            Custom maps, extraordinary worlds, and premium Minecraft
-            creations built to elevate your server and community.
+            Maps sur mesure, mondes extraordinaires et créations Minecraft
+            premium pensées pour sublimer ton serveur et ta communauté.
           </p>
 
           <div className="mt-9 flex flex-wrap gap-4">
             <Button href="/portfolio" showArrow>
-              View Portfolio
+              Voir le Portfolio
             </Button>
             <Button href="/custom-builds" variant="secondary" icon={<Package className="h-4 w-4" />}>
-              Order a Custom Build
+              Commander un Build Sur Mesure
               <ArrowRight className="h-4 w-4" />
             </Button>
           </div>
@@ -228,13 +228,13 @@ export default function Hero() {
           style={{ opacity: textOpacity }}
           className="glass-panel absolute bottom-28 right-6 hidden max-w-[190px] animate-float rounded-2xl p-4 sm:right-10 lg:block"
         >
-          <p className="text-[10px] uppercase tracking-[0.2em] text-white/40">Built for</p>
+          <p className="text-[10px] uppercase tracking-[0.2em] text-white/40">Conçu pour</p>
           <p className="font-display text-sm font-semibold leading-tight text-white">
             Passion
             <br />
             Performance
             <br />
-            People
+            Perfection
           </p>
         </motion.div>
 
@@ -244,7 +244,7 @@ export default function Hero() {
           className="absolute inset-x-0 bottom-8 flex flex-col items-center gap-2"
         >
           <span className="text-[11px] font-medium uppercase tracking-[0.25em] text-white/40">
-            Scroll to Explore
+            Défile pour explorer
           </span>
           <span className="flex h-9 w-6 items-start justify-center rounded-full border border-white/25 p-1.5">
             <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-accent-400" />

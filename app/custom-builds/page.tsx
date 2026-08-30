@@ -15,31 +15,31 @@ import Button from "@/components/shared/Button";
 import PageBanner from "@/components/shared/PageBanner";
 
 export const metadata: Metadata = {
-  title: "Custom Builds",
+  title: "Sur Mesure",
   description:
-    "Commission a fully custom Minecraft build — spawns, hubs, maps, and full server environments, tailored to your vision.",
+    "Commande un build Minecraft entièrement sur mesure — spawns, hubs, maps et environnements de serveur complets, pensés pour ta vision.",
 };
 
 const PROCESS = [
-  { icon: MessageSquare, title: "Tell us your vision", desc: "Share your ideas, references, and goals for the build." },
-  { icon: FileText, title: "Quote & planning", desc: "We scope the project and agree on price, style, and timeline." },
-  { icon: Hammer, title: "Building", desc: "Your build takes shape, with progress updates along the way." },
-  { icon: RefreshCw, title: "Revisions", desc: "We fine-tune details until it matches your vision exactly." },
-  { icon: PackageCheck, title: "Delivery", desc: "You receive the finished world or schematic, ready to use." },
+  { icon: MessageSquare, title: "Partage-nous ta vision", desc: "Décris tes idées, tes références et tes objectifs pour le build." },
+  { icon: FileText, title: "Devis & planification", desc: "On cadre le projet et on se met d'accord sur le prix, le style et le délai." },
+  { icon: Hammer, title: "Construction", desc: "Ton build prend forme, avec des points d'avancement réguliers." },
+  { icon: RefreshCw, title: "Révisions", desc: "On affine les détails jusqu'à ce que ça corresponde exactement à ta vision." },
+  { icon: PackageCheck, title: "Livraison", desc: "Tu reçois le monde ou le schematic terminé, prêt à l'emploi." },
 ];
 
 const SERVICES = [
-  { icon: Compass, title: "Spawn", desc: "A striking first impression for new players." },
-  { icon: Landmark, title: "Hub", desc: "A central, navigable core for your network." },
-  { icon: Globe2, title: "Custom Map", desc: "Hand-sculpted terrain built around your theme." },
-  { icon: Building2, title: "Buildings", desc: "Individual structures, interiors included." },
-  { icon: Server, title: "Full Server Environment", desc: "A complete world built end-to-end." },
+  { icon: Compass, title: "Spawn", desc: "Une première impression marquante pour tes nouveaux joueurs." },
+  { icon: Landmark, title: "Hub", desc: "Un cœur central et navigable pour ton réseau." },
+  { icon: Globe2, title: "Map Sur Mesure", desc: "Un terrain sculpté à la main autour de ton thème." },
+  { icon: Building2, title: "Bâtiments", desc: "Des structures individuelles, intérieurs inclus." },
+  { icon: Server, title: "Environnement de Serveur Complet", desc: "Un monde entier construit de A à Z." },
 ];
 
 const TIERS = [
-  { range: "$50 – $150", label: "Small build", desc: "A single structure or small spawn area." },
-  { range: "$150 – $400", label: "Mid-scale project", desc: "A detailed hub, town, or medium map." },
-  { range: "$400+", label: "Full environment", desc: "Large maps, full server worlds, or ongoing work." },
+  { range: "50 € – 150 €", label: "Petit build", desc: "Une structure unique ou une petite zone de spawn." },
+  { range: "150 € – 400 €", label: "Projet moyenne échelle", desc: "Un hub détaillé, une ville, ou une map de taille moyenne." },
+  { range: "400 €+", label: "Environnement complet", desc: "Grandes maps, mondes de serveur complets, ou travail continu." },
 ];
 
 export default function CustomBuildsPage() {
@@ -47,20 +47,20 @@ export default function CustomBuildsPage() {
     <div className="pb-28">
       <PageBanner
         image="/images/banner-custom-builds.png"
-        eyebrow="Custom Builds"
-        title="Built entirely around your vision."
-        subtitle="Every server is different. We design and build custom Minecraft environments from scratch — no templates, no shortcuts — matched to your theme, scale, and gameplay."
+        eyebrow="Sur Mesure"
+        title="Entièrement pensé autour de ta vision."
+        subtitle="Chaque serveur est différent. Nous concevons et construisons des environnements Minecraft sur mesure à partir de zéro — sans templates, sans raccourcis — adaptés à ton thème, ton échelle et ton gameplay."
       >
         <div className="mt-8">
           <Button href="/contact" showArrow>
-            Request a Custom Build
+            Commander un Build Sur Mesure
           </Button>
         </div>
       </PageBanner>
 
       {/* Services */}
       <div className="container-page mt-24">
-        <h2 className="font-display text-2xl font-bold text-white">What we build</h2>
+        <h2 className="font-display text-2xl font-bold text-white">Ce que nous construisons</h2>
         <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-5">
           {SERVICES.map((s) => (
             <div key={s.title} className="glass-card p-5">
@@ -76,7 +76,7 @@ export default function CustomBuildsPage() {
 
       {/* Process */}
       <div className="container-page mt-24">
-        <h2 className="font-display text-2xl font-bold text-white">Our process</h2>
+        <h2 className="font-display text-2xl font-bold text-white">Notre processus</h2>
         <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-5">
           {PROCESS.map((step, i) => (
             <div key={step.title} className="glass-card relative p-5">
@@ -95,10 +95,10 @@ export default function CustomBuildsPage() {
 
       {/* Pricing */}
       <div className="container-page mt-24">
-        <h2 className="font-display text-2xl font-bold text-white">Indicative pricing</h2>
+        <h2 className="font-display text-2xl font-bold text-white">Tarifs indicatifs</h2>
         <p className="mt-2 max-w-xl text-sm text-white/50">
-          Every project is quoted individually — these ranges give a rough
-          sense of scale before we talk specifics.
+          Chaque projet est chiffré individuellement — ces fourchettes
+          donnent juste un ordre de grandeur avant qu&apos;on parle des détails.
         </p>
         <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-3">
           {TIERS.map((tier) => (
@@ -116,14 +116,14 @@ export default function CustomBuildsPage() {
         <div className="glass-panel flex flex-col items-start gap-5 rounded-2xl p-8 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <h3 className="font-display text-lg font-semibold text-white">
-              Ready to bring your idea to life?
+              Prêt à donner vie à ton idée ?
             </h3>
             <p className="mt-1 text-sm text-white/55">
-              Tell us about your project and we&apos;ll get back to you within 24 hours.
+              Parle-nous de ton projet, on te répond sous 24 heures.
             </p>
           </div>
           <Button href="/contact" showArrow>
-            Request a Custom Build
+            Commander un Build Sur Mesure
           </Button>
         </div>
       </div>
