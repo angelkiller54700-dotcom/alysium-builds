@@ -12,10 +12,5 @@
   "toolsUsed": ["WorldEdit", "Axiom", "BlockBench"],
   "featured": false,
   "seed": 7,
-  "gallery": [
-    { "label": "Overview", "seed": 7 },
-    { "label": "Plaza", "seed": 71 },
-    { "label": "Skyline", "seed": 72 },
-    { "label": "Aerial View", "seed": 73 }
-  ]
+  "gallery": []
 }

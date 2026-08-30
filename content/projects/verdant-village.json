@@ -12,10 +12,5 @@
   "toolsUsed": ["WorldEdit", "BlockBench"],
   "featured": true,
   "seed": 4,
-  "gallery": [
-    { "label": "Overview", "seed": 4 },
-    { "label": "Market Square", "seed": 41 },
-    { "label": "Interiors", "seed": 42 },
-    { "label": "Aerial View", "seed": 43 }
-  ]
+  "gallery": []
 }

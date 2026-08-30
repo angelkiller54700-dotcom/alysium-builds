@@ -12,10 +12,5 @@
   "toolsUsed": ["WorldEdit", "Axiom", "Terra"],
   "featured": true,
   "seed": 3,
-  "gallery": [
-    { "label": "Overview", "seed": 3 },
-    { "label": "Village", "seed": 31 },
-    { "label": "Terrain", "seed": 32 },
-    { "label": "Aerial View", "seed": 33 }
-  ]
+  "gallery": []
 }

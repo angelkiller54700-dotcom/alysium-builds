@@ -96,25 +96,28 @@ export default function ProjectPage({
         </div>
 
         {/* Gallery */}
-        <div className="mt-16">
-          <h2 className="font-display text-xl font-semibold text-white">Gallery</h2>
-          <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2">
-            {project.gallery.map((shot) => (
-              <div key={shot.label} className="glass-card overflow-hidden">
-                <div className="relative aspect-video w-full">
-                  {shot.image ? (
-                    <Image src={shot.image} alt={shot.label} fill className="object-cover" />
-                  ) : (
-                    <PlaceholderScene seed={shot.seed} className="h-full w-full" />
-                  )}
-                  <span className="absolute bottom-3 left-3 rounded-full border border-white/15 bg-black/50 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-white/80 backdrop-blur-sm">
-                    {shot.label}
-                  </span>
+        {project.gallery.length > 0 && (
+          <div className="mt-16">
+            <h2 className="font-display text-xl font-semibold text-white">Gallery</h2>
+            <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2">
+              {project.gallery.map((src, i) => (
+                <div key={src} className="glass-card overflow-hidden">
+                  <div className="relative aspect-video w-full">
+                    <Image
+                      src={src}
+                      alt={`${project.name} — screenshot ${i + 1}`}
+                      fill
+                      className="object-cover"
+                    />
+                    <span className="absolute bottom-3 left-3 rounded-full border border-white/15 bg-black/50 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-white/80 backdrop-blur-sm">
+                      Screenshot {i + 1}
+                    </span>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
+        )}
 
         {/* Final CTA */}
         <div className="glass-panel mt-16 flex flex-col items-start gap-5 rounded-2xl p-8 sm:flex-row sm:items-center sm:justify-between">

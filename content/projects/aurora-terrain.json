@@ -12,10 +12,5 @@
   "toolsUsed": ["WorldEdit", "Terra"],
   "featured": false,
   "seed": 6,
-  "gallery": [
-    { "label": "Overview", "seed": 6 },
-    { "label": "Mountains", "seed": 61 },
-    { "label": "Rivers", "seed": 62 },
-    { "label": "Aerial View", "seed": 63 }
-  ]
+  "gallery": []
 }

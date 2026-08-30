@@ -12,11 +12,6 @@
   "toolsUsed": ["WorldEdit", "Axiom"],
   "featured": false,
   "seed": 5,
-  "gallery": [
-    { "label": "Overview", "seed": 5 },
-    { "label": "Beacon Hall", "seed": 51 },
-    { "label": "Cliffside", "seed": 52 },
-    { "label": "Aerial View", "seed": 53 }
-  ],
+  "gallery": [],
   "resourceLink": "https://builtbybit.com/resources/frostpeak-outpost.0"
 }

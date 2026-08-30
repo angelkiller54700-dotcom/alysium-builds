@@ -1,22 +1,18 @@
 {
-  "slug": "ashenkeep-castle",
-  "name": "Ashenkeep Castle",
-  "type": "Faction",
-  "categories": ["Medieval", "Fantasy", "Faction"],
-  "description": "A dark medieval stronghold built for factions, sieges, and wars.",
-  "longDescription": "Ashenkeep Castle is a siege-ready fortress built for faction and war servers. Layered walls, defensible chokepoints, and a fully furnished keep interior give raiders and defenders equally interesting fights, without sacrificing atmosphere.",
-  "version": "1.20.1",
-  "size": "180 x 180 blocks",
+  "longDescription": "Features​\nLarge medieval castle overlooking the village\nMultiple detailed houses and towers\nDense custom forest environment\nDetailed paths, gardens and vegetation\nWaterfalls and rocky terrain\nFarms and decorative areas\nWarm lighting throughout the village\nMultiple elevations and exploration areas\nFantasy / medieval atmosphere\nHighly detailed exterior design\nA complete environment designed to give your server or project a strong and memorable medieval identity.",
+  "size": "180x180",
   "interiors": true,
   "customTerrain": true,
-  "toolsUsed": ["WorldEdit", "Axiom"],
+  "resourceLink": "https://builtbybit.com/resources/medieval-mountain-village.122408/",
+  "name": "Medieval Mountain Village",
+  "slug": "medieval-mountain-village",
   "featured": true,
   "seed": 2,
-  "gallery": [
-    { "label": "Exterior", "seed": 2 },
-    { "label": "Throne Room", "seed": 21 },
-    { "label": "Walls & Towers", "seed": 22 },
-    { "label": "Aerial View", "seed": 23 }
-  ],
-  "resourceLink": "https://builtbybit.com/resources/ashenkeep-castle.0"
+  "gallery": ["/images/uploads/chatgpt-image-30-août-2026-14_12_13-2-.png"],
+  "toolsUsed": ["WorldEdit", "Axiom"],
+  "version": "1.20.1",
+  "type": "Village",
+  "image": "/images/uploads/chatgpt-image-30-août-2026-14_12_13-1-.png",
+  "categories": ["Medieval", "Fantasy"],
+  "description": "Discover a detailed Medieval Mountain Village, built around an imposing castle overlooking a dense pine forest."
 }

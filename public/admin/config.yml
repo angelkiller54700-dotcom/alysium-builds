@@ -86,14 +86,12 @@ collections:
           value_type: "int",
           hint: "Any whole number — only used if no cover image is uploaded.",
         }
-      - label: "Gallery"
+      - label: "Gallery Screenshots"
         name: "gallery"
         widget: "list"
-        summary: "{{fields.label}}"
-        fields:
-          - { label: "Label", name: "label", widget: "string" }
-          - { label: "Image", name: "image", widget: "image", required: false }
-          - { label: "Placeholder art seed", name: "seed", widget: "number", value_type: "int" }
+        field: { label: "Screenshot", name: "image", widget: "image" }
+        default: []
+        hint: "Click into the media library and select several screenshots at once — each one becomes its own gallery entry."
       - {
           label: "BuiltByBit link",
           name: "resourceLink",

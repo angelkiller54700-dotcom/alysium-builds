@@ -12,10 +12,5 @@
   "toolsUsed": ["WorldEdit", "Axiom", "BlockBench"],
   "featured": true,
   "seed": 1,
-  "gallery": [
-    { "label": "Overview", "seed": 1 },
-    { "label": "Portal Room", "seed": 11 },
-    { "label": "Aerial View", "seed": 12 },
-    { "label": "Detail", "seed": 13 }
-  ]
+  "gallery": []
 }

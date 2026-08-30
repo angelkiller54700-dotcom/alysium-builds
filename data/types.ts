@@ -15,13 +15,6 @@ export type ProjectCategory =
   | "Maps"
   | "Faction";
 
-export type GalleryShot = {
-  label: string;
-  seed: number;
-  /** Optional real screenshot, e.g. /images/uploads/xxx.jpg (uploaded via CMS) */
-  image?: string;
-};
-
 export type Project = {
   slug: string;
   name: string;
@@ -40,7 +33,8 @@ export type Project = {
   seed: number;
   /** Optional real cover screenshot, e.g. /images/uploads/xxx.jpg */
   image?: string;
-  gallery: GalleryShot[];
+  /** Real screenshot paths, e.g. /images/uploads/xxx.jpg — uploaded via the CMS. Empty until populated. */
+  gallery: string[];
   /** Present when this build is also purchasable as a resource on BuiltByBit */
   resourceLink?: string;
 };
