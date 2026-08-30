@@ -77,7 +77,7 @@ export default function TermsPage() {
 
       <h2 className={h2}>5. Delivery & Usage Rights</h2>
       <p className={p}>
-        Once delivered (or purchased through our shop), you're free to use
+        Once delivered (or purchased through our shop), you&apos;re free to use
         the build on your own server(s), including commercial servers. We
         retain ownership of the build&apos;s design and the right to
         showcase it in our portfolio and marketing, unless we&apos;ve
@@ -90,9 +90,9 @@ export default function TermsPage() {
       <p className={p}>
         {SITE.name} is an independent creative studio and is not
         affiliated with, endorsed by, or sponsored by Mojang Studios,
-        Microsoft, or Hypixel Studios. "Minecraft" is a trademark of
-        Mojang Studios/Microsoft; "Hytale" is a trademark of Hypixel
-        Studios. All builds are original works created by us for use
+        Microsoft, or Hypixel Studios. &ldquo;Minecraft&rdquo; is a
+        trademark of Mojang Studios/Microsoft; &ldquo;Hytale&rdquo; is a
+        trademark of Hypixel Studios. All builds are original works created by us for use
         within these games.
       </p>
 
