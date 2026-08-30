@@ -8,7 +8,6 @@
   "slug": "medieval-mountain-village",
   "featured": true,
   "seed": 2,
-  "game": "Minecraft",
   "gallery": [
     "/images/uploads/chatgpt-image-30-août-2026-14_12_13-2-.png",
     "/images/uploads/chatgpt-image-30-août-2026-14_12_13-3-.png",
@@ -18,10 +17,17 @@
     "/images/uploads/chatgpt-image-30-août-2026-14_12_16-8-.png",
     "/images/uploads/chatgpt-image-30-août-2026-14_12_16-10-.png"
   ],
-  "toolsUsed": ["WorldEdit", "Axiom"],
+  "game": "Hytale",
+  "toolsUsed": [
+    "WorldEdit",
+    "Axiom"
+  ],
   "version": "1.20.1",
   "type": "Town",
   "image": "/images/uploads/chatgpt-image-30-août-2026-14_12_13-1-.png",
-  "categories": ["Medieval", "Fantasy"],
+  "categories": [
+    "Medieval",
+    "Fantasy"
+  ],
   "description": "Discover a detailed Medieval Mountain Village, built around an imposing castle overlooking a dense pine forest."
 }

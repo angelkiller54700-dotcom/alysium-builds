@@ -39,7 +39,7 @@ export default function ContactPage() {
               rel="noopener noreferrer"
               className="btn-ghost mt-3"
             >
-              discord.gg/alysiumbuilds
+              Join our Discord
             </a>
           </div>
 

@@ -127,7 +127,7 @@ export default function Footer() {
                 className="flex items-center gap-2 text-sm text-white/60 hover:text-accent-300"
               >
                 <MessageCircle className="h-4 w-4" />
-                discord.gg/alysiumbuilds
+                Join our Discord
               </a>
             </li>
             <li>
