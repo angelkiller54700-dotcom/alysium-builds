@@ -4,6 +4,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Alysium Builds — Content Manager</title>
+    <!-- Absolute path, so this loads correctly whether the URL was opened
+         as /admin or /admin/ — Decap CMS otherwise guesses config.yml's
+         location from the current URL, which breaks without the trailing slash. -->
+    <link href="/admin/config.yml" type="text/yaml" rel="cms-config-url" />
   </head>
   <body>
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
