@@ -7,7 +7,12 @@ export default function Testimonials() {
 
   return (
     <section className="container-page py-20 sm:py-28">
-      <SectionHeading icon={Star} eyebrow="Trusted by Server Owners" viewAllHref="/contact" viewAllLabel="View more reviews" />
+      <SectionHeading
+        icon={Star}
+        eyebrow="Trusted by Server Owners"
+        viewAllHref="/leave-a-review"
+        viewAllLabel="Leave a review"
+      />
       <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-3">
         {testimonials.map((t) => (
           <div key={t.name} className="glass-card p-6">
