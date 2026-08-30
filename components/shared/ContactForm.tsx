@@ -1,24 +1,40 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { CheckCircle2, Loader2, Send } from "lucide-react";
+import { AlertCircle, CheckCircle2, Loader2, Send } from "lucide-react";
 
 const inputClasses =
   "w-full rounded-xl border border-white/10 bg-white/[0.03] px-4 py-2.5 text-sm text-white placeholder:text-white/30 outline-none transition-colors focus:border-accent-500/60 focus:bg-white/[0.05]";
 const labelClasses = "mb-1.5 block text-xs font-medium uppercase tracking-wide text-white/50";
 
 export default function ContactForm() {
-  const [status, setStatus] = useState<"idle" | "submitting" | "sent">("idle");
+  const [status, setStatus] = useState<"idle" | "submitting" | "sent" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setStatus("submitting");
 
-    // TODO: wire this up to a real endpoint (Formspree, Getform, or a Next.js
-    // API route that forwards to Discord/email) before going live. For now
-    // this just simulates a submission so the form is fully testable in V1.
-    await new Promise((resolve) => setTimeout(resolve, 700));
-    setStatus("sent");
+    const formData = new FormData(event.currentTarget);
+    const payload = Object.fromEntries(formData.entries());
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.error || "Something went wrong.");
+      }
+
+      setStatus("sent");
+    } catch (err) {
+      setErrorMessage(err instanceof Error ? err.message : "Something went wrong.");
+      setStatus("error");
+    }
   }
 
   if (status === "sent") {
@@ -38,6 +54,16 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="glass-panel rounded-2xl p-6 sm:p-8">
+      {/* Honeypot — hidden from real visitors, bots tend to fill every field. */}
+      <input
+        type="text"
+        name="company"
+        tabIndex={-1}
+        autoComplete="off"
+        className="absolute left-[-9999px] h-0 w-0 opacity-0"
+        aria-hidden="true"
+      />
+
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <div>
           <label className={labelClasses} htmlFor="name">
@@ -151,6 +177,13 @@ export default function ContactForm() {
           />
         </div>
       </div>
+
+      {status === "error" && (
+        <p className="mt-4 flex items-center gap-2 text-sm text-red-400">
+          <AlertCircle className="h-4 w-4 shrink-0" />
+          {errorMessage}
+        </p>
+      )}
 
       <button
         type="submit"
