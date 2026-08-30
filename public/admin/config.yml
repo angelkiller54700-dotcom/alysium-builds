@@ -8,18 +8,19 @@
 # public/images/uploads for images. Commit + push them like any other
 # code change once you're happy with them.
 #
-# REMOTE EDITING (edit from anywhere, once you're hosted):
-#   Once this repo lives on GitHub, set `repo:` below to "yourname/alysium-builds"
-#   and follow https://decapcms.org/docs/github-backend/ to register a GitHub
-#   OAuth App + auth provider. That's independent of where the site itself is
-#   hosted (your friend's server, Vercel, anywhere) — it only handles the
-#   admin login. Until then, local_backend below keeps everything working
-#   without any of that setup.
+# REMOTE EDITING (edit from anywhere — the site is live on Vercel):
+#   Uses this same app's own /auth and /callback routes as the OAuth
+#   provider (see app/auth/route.ts, app/callback/route.ts) instead of a
+#   separate service. Requires a GitHub OAuth App with its callback URL
+#   set to base_url + "/callback", and GITHUB_OAUTH_CLIENT_ID /
+#   GITHUB_OAUTH_CLIENT_SECRET set as env vars on Vercel.
 
 backend:
   name: github
-  repo: your-username/alysium-builds # TODO: update once this is pushed to GitHub
+  repo: angelkiller54700-dotcom/alysium-builds
   branch: main
+  base_url: https://alysium-builds.vercel.app
+  auth_endpoint: auth
 
 local_backend: true
 
