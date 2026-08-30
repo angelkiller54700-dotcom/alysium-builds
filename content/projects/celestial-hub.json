@@ -2,6 +2,7 @@
   "slug": "celestial-hub",
   "name": "Celestial Hub",
   "type": "Hub",
+  "game": "Minecraft",
   "categories": ["Hubs", "Fantasy"],
   "description": "A grand fantasy hub with floating islands, portals, and custom builds.",
   "longDescription": "Celestial Hub was designed as a centerpiece for networks that want their spawn to feel like an event, not a waiting room. Floating islands orbit a central spire, connected by glowing bridges, with dedicated portal rooms for every game mode and hidden nooks that reward exploration.",

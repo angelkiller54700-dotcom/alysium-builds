@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import {
+  Gamepad2,
   Layers,
   Ruler,
   Blocks,
@@ -42,9 +43,10 @@ export default function ProjectPage({
   if (!project) notFound();
 
   const info = [
+    { icon: Gamepad2, label: "Game", value: project.game },
     { icon: Layers, label: "Type", value: project.type },
     { icon: Ruler, label: "Size", value: project.size },
-    { icon: Blocks, label: "MC Version", value: project.version },
+    { icon: Blocks, label: "Version", value: project.version },
     { icon: DoorOpen, label: "Interiors", value: project.interiors ? "Included" : "Not included" },
     { icon: Mountain, label: "Custom Terrain", value: project.customTerrain ? "Yes" : "No" },
     { icon: Wrench, label: "Tools Used", value: project.toolsUsed.join(", ") },
@@ -81,7 +83,7 @@ export default function ProjectPage({
         <p className="max-w-2xl text-white/60">{project.longDescription}</p>
 
         {/* Info grid */}
-        <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
+        <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-7">
           {info.map((item) => (
             <div key={item.label} className="glass-panel rounded-xl p-4">
               <item.icon className="h-4 w-4 text-accent-400" />

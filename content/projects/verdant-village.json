@@ -2,6 +2,7 @@
   "slug": "verdant-village",
   "name": "Verdant Village",
   "type": "Town",
+  "game": "Minecraft",
   "categories": ["Fantasy", "Medieval"],
   "description": "A cozy medieval village with farms, markets, and custom interiors.",
   "longDescription": "Verdant Village brings warmth and life to a medieval town build. Every house has a distinct interior, the market square is dressed for trade, and surrounding farmland ties the whole settlement into its landscape.",

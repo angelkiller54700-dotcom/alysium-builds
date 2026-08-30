@@ -15,9 +15,13 @@ export type ProjectCategory =
   | "Maps"
   | "Faction";
 
+export type Game = "Minecraft" | "Hytale";
+
 export type Project = {
   slug: string;
   name: string;
+  /** Which game this build was made for */
+  game: Game;
   /** Short badge shown on cards, e.g. Hub / Faction / Survival / Town */
   type: string;
   categories: ProjectCategory[];

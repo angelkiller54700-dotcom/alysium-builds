@@ -2,6 +2,7 @@
   "slug": "aurora-terrain",
   "name": "Aurora Terrain",
   "type": "Map",
+  "game": "Minecraft",
   "categories": ["Maps", "Modern"],
   "description": "A beautiful custom terrain map with mountains, rivers, and biomes.",
   "longDescription": "Aurora Terrain is a large-scale custom map built for creative and terraforming servers. Sculpted mountain ranges, carved rivers, and smooth biome blending give builders a canvas that already feels finished before a single block is placed.",

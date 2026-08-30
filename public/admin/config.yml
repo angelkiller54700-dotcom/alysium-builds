@@ -44,6 +44,11 @@ collections:
           widget: "string",
           hint: "Lowercase, hyphenated, e.g. celestial-hub. Used in the project's URL.",
         }
+      - label: "Game"
+        name: "game"
+        widget: "select"
+        options: ["Minecraft", "Hytale"]
+        default: "Minecraft"
       - {
           label: "Type badge",
           name: "type",

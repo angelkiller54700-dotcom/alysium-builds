@@ -2,6 +2,7 @@
   "slug": "eldrune-kingdom",
   "name": "Eldrune Kingdom",
   "type": "Survival",
+  "game": "Minecraft",
   "categories": ["Survival", "Fantasy"],
   "description": "A vast survival kingdom with villages, quests, and custom terrain.",
   "longDescription": "Eldrune Kingdom is a full survival world spanning multiple biomes, villages, and hand-placed points of interest. Built for long-term servers that want every hill and treeline to feel intentional, with quest hooks woven into the terrain itself.",

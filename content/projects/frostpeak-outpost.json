@@ -2,6 +2,7 @@
   "slug": "frostpeak-outpost",
   "name": "Frostpeak Outpost",
   "type": "Spawn",
+  "game": "Minecraft",
   "categories": ["Spawns", "Fantasy"],
   "description": "A frozen mountain outpost spawn with icy peaks and glowing beacons.",
   "longDescription": "Frostpeak Outpost is a compact, high-impact spawn build for winter-themed servers. Icy cliffs frame a central beacon hall, with wayfinding baked directly into the architecture so new players always know where to go.",
