@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Gem, Sparkles, ShieldCheck, Clock } from "lucide-react";
 import Button from "@/components/shared/Button";
+import PageBanner from "@/components/shared/PageBanner";
 
 export const metadata: Metadata = {
   title: "About",
@@ -16,22 +17,19 @@ const VALUES = [
 
 export default function AboutPage() {
   return (
-    <div className="pb-28 pt-36 sm:pt-40">
-      <div className="container-page max-w-3xl">
-        <div className="eyebrow w-fit rounded-full border border-accent-500/30 bg-accent-500/10 px-4 py-1.5">
-          About Alysium Builds
-        </div>
+    <div className="pb-28">
+      <PageBanner
+        image="/images/banner-about.png"
+        eyebrow="About Alysium Builds"
+        title="We build worlds, not just structures."
+        subtitle="Alysium Builds started with a simple frustration: too many Minecraft builds look like decoration, not like a place."
+      />
 
-        <h1 className="mt-5 font-display text-4xl font-bold text-white sm:text-5xl">
-          We build worlds, not just structures.
-        </h1>
-
-        <p className="mt-6 text-white/60">
-          Alysium Builds started with a simple frustration: too many
-          Minecraft builds look like decoration, not like a place. We wanted
-          to build spaces that feel considered from the terrain up — where
-          lighting, scale, and detail work together instead of being bolted
-          on at the end.
+      <div className="container-page mt-14 max-w-3xl">
+        <p className="text-white/60">
+          We wanted to build spaces that feel considered from the terrain
+          up — where lighting, scale, and detail work together instead of
+          being bolted on at the end.
         </p>
         <p className="mt-4 text-white/60">
           Today we work with server owners, networks, and creators who care

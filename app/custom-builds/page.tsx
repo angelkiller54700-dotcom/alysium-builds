@@ -12,6 +12,7 @@ import {
   Compass,
 } from "lucide-react";
 import Button from "@/components/shared/Button";
+import PageBanner from "@/components/shared/PageBanner";
 
 export const metadata: Metadata = {
   title: "Custom Builds",
@@ -43,25 +44,19 @@ const TIERS = [
 
 export default function CustomBuildsPage() {
   return (
-    <div className="pb-28 pt-36 sm:pt-40">
-      <div className="container-page">
-        <div className="eyebrow w-fit rounded-full border border-accent-500/30 bg-accent-500/10 px-4 py-1.5">
-          Custom Builds
-        </div>
-        <h1 className="mt-5 max-w-2xl font-display text-4xl font-bold text-white sm:text-5xl">
-          Built entirely around your vision.
-        </h1>
-        <p className="mt-4 max-w-xl text-white/55">
-          Every server is different. We design and build custom Minecraft
-          environments from scratch — no templates, no shortcuts — matched
-          to your theme, scale, and gameplay.
-        </p>
+    <div className="pb-28">
+      <PageBanner
+        image="/images/banner-custom-builds.png"
+        eyebrow="Custom Builds"
+        title="Built entirely around your vision."
+        subtitle="Every server is different. We design and build custom Minecraft environments from scratch — no templates, no shortcuts — matched to your theme, scale, and gameplay."
+      >
         <div className="mt-8">
           <Button href="/contact" showArrow>
             Request a Custom Build
           </Button>
         </div>
-      </div>
+      </PageBanner>
 
       {/* Services */}
       <div className="container-page mt-24">

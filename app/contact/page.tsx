@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { MessageCircle, Mail, Clock } from "lucide-react";
 import ContactForm from "@/components/shared/ContactForm";
+import PageBanner from "@/components/shared/PageBanner";
 import { SITE } from "@/lib/utils";
 
 export const metadata: Metadata = {
@@ -11,19 +12,15 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="container-page pb-28 pt-36 sm:pt-40">
-      <div className="eyebrow w-fit rounded-full border border-accent-500/30 bg-accent-500/10 px-4 py-1.5">
-        Contact
-      </div>
-      <h1 className="mt-5 max-w-2xl font-display text-4xl font-bold text-white sm:text-5xl">
-        Let&apos;s talk about your project.
-      </h1>
-      <p className="mt-4 max-w-xl text-white/55">
-        Fill out the form with as much detail as you can — it helps us
-        scope your project accurately and reply faster.
-      </p>
+    <div>
+      <PageBanner
+        image="/images/banner-contact.png"
+        eyebrow="Contact"
+        title="Let's talk about your project."
+        subtitle="Fill out the form with as much detail as you can — it helps us scope your project accurately and reply faster."
+      />
 
-      <div className="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-[1fr_360px]">
+      <div className="container-page pb-28 pt-14 grid grid-cols-1 gap-8 lg:grid-cols-[1fr_360px]">
         <ContactForm />
 
         <div className="space-y-4">
