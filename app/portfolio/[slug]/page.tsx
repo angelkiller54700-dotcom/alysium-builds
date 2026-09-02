@@ -80,7 +80,7 @@ export default function ProjectPage({
       </div>
 
       <div className="container-page mt-14">
-        <p className="max-w-2xl text-white/60">{project.longDescription}</p>
+        <p className="max-w-2xl whitespace-pre-line text-white/60">{project.longDescription}</p>
 
         {/* Info grid */}
         <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-7">

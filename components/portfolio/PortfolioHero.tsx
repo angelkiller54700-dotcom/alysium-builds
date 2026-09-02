@@ -22,7 +22,7 @@ export default function PortfolioHero() {
       <div className="absolute inset-0 bg-gradient-to-r from-ink-950 via-ink-950/75 to-ink-950/20" />
       <div className="absolute inset-0 bg-gradient-to-t from-ink-950 via-transparent to-ink-950/40" />
 
-      <div className="container-page relative flex h-full flex-col justify-center pt-16">
+      <div className="container-page relative flex h-full flex-col justify-center pt-24">
         <h1 className="max-w-2xl font-display text-4xl font-bold leading-[1.05] text-white sm:text-5xl lg:text-6xl">
           DES BUILDS
           <br />

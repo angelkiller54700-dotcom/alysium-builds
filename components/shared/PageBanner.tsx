@@ -21,7 +21,7 @@ export default function PageBanner({ image, eyebrow, title, subtitle, children }
       <div className="absolute inset-0 bg-gradient-to-r from-ink-950 via-ink-950/75 to-ink-950/20" />
       <div className="absolute inset-0 bg-gradient-to-t from-ink-950 via-transparent to-ink-950/40" />
 
-      <div className="container-page relative flex h-full flex-col justify-center pt-16">
+      <div className="container-page relative flex h-full flex-col justify-center pt-24">
         <div className="eyebrow w-fit rounded-full border border-accent-500/30 bg-accent-500/10 px-4 py-1.5">
           {eyebrow}
         </div>
